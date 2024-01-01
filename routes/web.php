@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\pertanyaanController;
-use App\Http\Controllers\universitasController;
+use App\Http\Controllers\akunController;
 use App\Http\Controllers\homeController;
+use App\Http\Controllers\jurusanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,14 +18,24 @@ use App\Http\Controllers\homeController;
 */
 
 Route::get('/', function () {
-    return view('welcomePage');
+    return redirect()->route('home.index');
 });
 
 Route::resource('home', homeController::class);
-Route::resource('universitas', universitasController::class);
+Route::resource('jurusan', jurusanController::class);
+Route::resource('akun', akunController::class);
 
 
+
+Route::get('/KompasKefrofesian', [homeController::class, 'index'])->name('home.index');
 
 Route::get('/pertanyaanMinat', [pertanyaanController::class, 'pertanyaan'])->name('pertanyaan.pertanyaan');
-Route::get('/jurusan', [homeController::class, 'jurusan'])->name('home.jurusan');
-Route::get('/get-universitas', [universitasController::class, 'getCsutomers'])->name('universitas.getCustomers');
+Route::get('/halamanAdmin', [homeController::class, 'viewAdmin'])->name('home.viewAdmin');
+Route::get('/halamanJurusan', [homeController::class, 'AdminJurusan'])->name('home.AdminJurusan');
+
+Route::get('/FormRegistrasi', [AkunController::class, 'viewRegis'])->name('admin.regis');
+Route::post('/registrasi', [AkunController::class, 'registrasi'])->name('regis');
+
+Route::get('/halamanLogin', [AkunController::class, 'viewLogin'])->name('admin.login');
+Route::post('/login', [AkunController::class, 'login'])->name('login');
+

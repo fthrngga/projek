@@ -10,6 +10,20 @@
   <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="vendors/aos/css/aos.css">
   <link rel="stylesheet" href="css/style.min.css">
+  <style>
+
+
+
+#datatablesSimple {
+    width: 100%; /* Menyesuaikan lebar tabel dengan lebar modal */
+    padding: 10px; /* Menambahkan padding pada seluruh tabel */
+}
+
+
+
+
+
+    </style>
 </head>
 <body id="body" data-spy="scroll" data-target=".navbar" data-offset="100">
   <header id="header-section">
@@ -43,8 +57,11 @@
           <li class="nav-item">
             <a class="nav-link" href="#feedback-section">Universitas</a>
           </li>
+          
           <li class="nav-item btn-contact-us pl-4 pl-lg-0">
-            <button class="btn btn-info" data-toggle="modal" data-target="#exampleModal">Contact Us</button>
+          <form action="{{ route('admin.login')}}">
+            <button class="btn btn-info" >Login</button>
+          </form>
           </li>
         </ul>
       </div>
@@ -53,13 +70,12 @@
   </header>
   <div class="banner" >
     <div class="container">
-      <h1 class="font-weight-semibold">Tentukan jurusan yang sesuai dengan <br>minat & bakat anda</h1>
-      <h6 class="font-weight-normal text-muted pb-3">Asesmen minat & bakat berbasis pohon keputusan.</h6>
+      <h1 class="font-weight-semibold">Tentukan jurusan yang sesuai dengan <br>minat anda</h1>
+      <h6 class="font-weight-normal text-muted pb-3">Asesmen minat berbasis pohon keputusan.</h6>
       <div>
         <form action="{{ route('pertanyaan.pertanyaan')}}">
       <button class="btn btn-info" >Mulai</button>
-        <!-- <button class="btn btn-opacity-success mr-1">Mulai</button> -->
-        <!-- <button class="btn btn-opacity-success ml-1">Learn more</button> -->
+       </form>
       </div>
       <img src="images/Group171.svg" alt="" class="img-fluid">
     </div>
@@ -68,32 +84,28 @@
     <div class="container">
       <section class="features-overview" id="features-section" >
         <div class="content-header">
-          <h2>How does it works</h2>
-          <h6 class="section-subtitle text-muted">One theme that serves as an easy-to-use operational toolkit<br>that meets customer's needs.</h6>
+          <h2>Kompas Keprofesian</h2>
         </div>
         <div class="d-md-flex justify-content-between">
           <div class="grid-margin d-flex justify-content-start">
             <div class="features-width">
               <img src="images/Group12.svg" alt="" class="img-icons">
-              <h5 class="py-3">Speed<br>Optimisation</h5>
-              <p class="text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer turpis, suspendisse.</p>
-              <a href="#"><p class="readmore-link">Readmore</p></a>  
+              <h5 class="py-3">Uji<br>Minat anda</h5>
+              
             </div>
           </div>
           <div class="grid-margin d-flex justify-content-center">
             <div class="features-width">
               <img src="images/Group7.svg" alt="" class="img-icons">
-              <h5 class="py-3">SEO and<br>Backlinks</h5>
-              <p class="text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer turpis, suspendisse.</p>
-              <a href="#"><p class="readmore-link">Readmore</p></a>
+              <h5 class="py-3">Ketahui Jurusan<br>yang cocok</h5>
+              
             </div>
           </div>
           <div class="grid-margin d-flex justify-content-end">
             <div class="features-width">
               <img src="images/Group5.svg" alt="" class="img-icons">
-              <h5 class="py-3">Content<br>Marketing</h5>
-              <p class="text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer turpis, suspendisse.</p>
-              <a href="#"><p class="readmore-link">Readmore</p></a>
+              <h5 class="py-3">Tentukan<br>Universitas</h5>
+              
             </div>
           </div>
         </div>
@@ -101,10 +113,10 @@
       <section class="digital-marketing-service" id="digital-marketing-section">
         <div class="row align-items-center">
           <div class="col-12 col-lg-7 grid-margin grid-margin-lg-0" data-aos="fade-right">
-            <h3 class="m-0">We Offer a Full Range<br>of Digital Marketing Services!</h3>
+            <h3 class="m-0">Pemilihan Jurusan:<br>Menemukan Passion dan Minat</h3>
             <div class="col-lg-7 col-xl-6 p-0">
-              <p class="py-4 m-0 text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer turpis, suspendisse.</p>
-              <p class="font-weight-medium text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer</p>
+              <p class="py-4 m-0 text-muted">Pemilihan jurusan penting untuk menemukan keselarasan antara minat dan tujuan karier, memungkinkan mahasiswa mendalami ilmu</p>
+              <p class="font-weight-medium text-muted">dan keterampilan melalui kurikulum yang dirancang khusus dan pengalaman praktis seperti proyek penelitian atau magang industri.</p>
             </div>    
           </div>
           <div class="col-12 col-lg-5 p-0 img-digital grid-margin grid-margin-lg-0" data-aos="fade-left">
@@ -116,20 +128,20 @@
             <img src="images/Group2.png" alt="" class="img-fluid">
           </div>
           <div class="col-12 col-lg-5 flex-item grid-margin" data-aos="fade-left">
-            <h3 class="m-0">Leading Digital Agency<br>for  Business Solution.</h3>
+            <h3 class="m-0">Kurikulum dan Pengalaman Praktis:<br>Mendalami Ilmu dan Keterampilan</h3>
             <div class="col-lg-9 col-xl-8 p-0">
-              <p class="py-4 m-0 text-muted">Power-packed with impressive features and well-optimized, this template is designed to provide the best performance in all circumstances.</p>
-              <p class="pb-2 font-weight-medium text-muted">Its smart features make it a powerful stand-alone website building tool.</p>
+              <p class="py-4 m-0 text-muted"> Dengan kombinasi ini, mahasiswa diharapkan berkembang menjadi individu yang terampil dan berpengetahuan,</p>
+              <p class="pb-2 font-weight-medium text-muted">siap menghadapi tantangan di dunia kerja atau melanjutkan studi lebih lanjut.</p>
             </div>
-            <button class="btn btn-info">Readmore</button>
+                <button class="btn btn-info" data-toggle="modal" data-target="#jurusanModal">Lihat Jurusan</button>
           </div>
         </div>
       </section>     
       <section class="case-studies" id="case-studies-section">
         <div class="row grid-margin">
           <div class="col-12 text-center pb-5">
-            <h2>Our case studies</h2>
-            <h6 class="section-subtitle text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum.</h6>
+            <h2>Profesi</h2>
+            <h6 class="section-subtitle text-muted">dari lulusan Teknik Informatika.</h6>
           </div>
           <div class="col-12 col-md-6 col-lg-3 stretch-card mb-3 mb-lg-0" data-aos="zoom-in">
             <div class="card color-cards">
@@ -139,10 +151,7 @@
                     <img src="images/Group95.svg" class="case-studies-card-img" alt="">
                   </div>  
                   <div class="card-desc-box d-flex align-items-center justify-content-around">
-                    <div>
-                      <h6 class="text-white pb-2 px-3">Know more about Online marketing</h6>
-                      <button class="btn btn-white">Read More</button>
-                    </div>
+                    
                   </div>
                 </div>   
                 <div class="card-details text-center pt-4">
@@ -161,8 +170,7 @@
                   </div>  
                   <div class="card-desc-box d-flex align-items-center justify-content-around">
                     <div>
-                      <h6 class="text-white pb-2 px-3">Know more about Web Development</h6>
-                      <button class="btn btn-white">Read More</button>
+                      
                     </div>
                   </div>
                 </div>   
@@ -182,8 +190,7 @@
                   </div>  
                   <div class="card-desc-box d-flex align-items-center justify-content-around">
                     <div>
-                      <h6 class="text-white pb-2 px-3">Know more about Web Designing</h6>
-                      <button class="btn btn-white">Read More</button>
+                      
                     </div>
                   </div>
                 </div>   
@@ -203,8 +210,7 @@
                   </div>  
                   <div class="card-desc-box d-flex align-items-center justify-content-around">
                     <div>
-                      <h6 class="text-white pb-2 px-3">Know more about Software Development</h6>
-                      <button class="btn btn-white">Read More</button>
+                      
                     </div>
                   </div>
                 </div>   
@@ -220,8 +226,8 @@
       <section class="customer-feedback" id="feedback-section">
         <div class="row">
           <div class="col-12 text-center pb-5">
-            <h2>What our customers have to say</h2>
-            <h6 class="section-subtitle text-muted m-0">Lorem ipsum dolor sit amet, tincidunt vestibulum.</h6>
+            <h2>Politeknik Caltex Riau</h2>
+            
           </div>
           <div class="owl-carousel owl-theme grid-margin">
               <div class="card customer-cards">
@@ -326,17 +332,6 @@
           </div>
         </div>
       </section>
-      <section class="contact-us" id="contact-section">
-        <div class="contact-us-bgimage grid-margin" >
-          <div class="pb-4">
-            <h4 class="px-3 px-md-0 m-0" data-aos="fade-down">Do you have any projects?</h4>
-            <h4 class="pt-1" data-aos="fade-down">Contact us</h4>
-          </div>
-          <div data-aos="fade-up">
-            <button class="btn btn-rounded btn-outline-danger">Contact us</button>
-          </div>          
-        </div>
-      </section>
       <section class="contact-details" id="contact-details-section">
         <div class="row text-center text-md-left">
           <div class="col-12 col-md-6 col-lg-3 grid-margin">
@@ -410,10 +405,54 @@
       </div>
     </div> 
   </div>
+  <!-- Modal -->
+<div class="modal fade justify-content-center" id="jurusanModal" tabindex="-1" role="dialog" aria-labelledby="jurusanModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-x1" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="jurusanModalLabel">Daftar Jurusan</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="card-body">
+          <table id="datatablesSimple" class="table table-striped">
+            <thead>
+              <tr>
+                <th>Nama</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach($jurusan as $data)
+              <tr>
+                <td>{{ $data->nama }}</td>
+                <td>
+                  <a href="{{ route('jurusan.show', $data->id) }}" class="btn btn-outline-info">Detail</i></a>
+                </td>
+              </tr>
+              @endforeach
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
   <script src="vendors/jquery/jquery.min.js"></script>
   <script src="vendors/bootstrap/bootstrap.min.js"></script>
   <script src="vendors/owl-carousel/js/owl.carousel.min.js"></script>
   <script src="vendors/aos/js/aos.js"></script>
   <script src="js/landingpage.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="admin/js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+    <script src="admin/js/datatables-simple-demo.js"></script>  
 </body>
 </html>
