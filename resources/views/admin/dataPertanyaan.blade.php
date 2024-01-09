@@ -10,14 +10,19 @@
   <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="vendors/aos/css/aos.css">
   <link rel="stylesheet" href="css/style.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="admin/css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
 </head>
 <body id="body" data-spy="scroll" data-target=".navbar" data-offset="100">
   <header id="header-section">
     <nav class="navbar navbar-expand-lg pl-3 pl-sm-0" id="navbar">
     <div class="container">
       <div class="navbar-brand-wrapper d-flex w-100">
-      <h2 style="color:red">KK</h2>
-        
+      <a href="{{ route('home.viewAdmin')}}">
+        <img src="images/Group2.svg" alt="Deskripsi Gambar">
+        </a>
         <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="mdi mdi-menu navbar-toggler-icon"></span>
         </button> 
@@ -45,26 +50,40 @@
   </header>
   <div class="banner" >
     <div class="container">
-      <h1 class="font-weight-semibold">Selamat Datang<br>Admin</h1>
-      <h6 class="font-weight-normal text-muted pb-3">Atur data jurusan anda disini</h6>
-      <div class="d-flex justify-content-center">
-        <form action="{{ route('home.AdminJurusan')}}">
-            <button class="btn btn-opacity-success mr-1">Data Jurusan</button>
-        </form>
-        <form action="{{ route('admin.regis')}}">
-            <button class="btn btn-opacity-success mr-1">Tambah admin</button>
-        </form>
-      </div>
-      <br>
-      <div class="d-flex justify-content-center">
-        <form action="{{ route('admin.aturHome')}}">
-            <button class="btn btn-opacity-success mr-1">Data Home</button>
-        </form>
-        <form action="{{ route('pertanyaan.index')}}">
-            <button class="btn btn-opacity-success mr-1">Data Pertanyaan</button>
-        </form>
-      </div>
-      <img src="images/Group171.svg" alt="" class="img-fluid">
+                
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>
+                Data Pertanyaan
+            </div>
+            
+            <div class="card-body">
+            <form action="{{ route('pertanyaan.create') }}">
+                <button class="btn btn-info">Tambah Data</button>
+            </form>
+                <table id="datatablesSimple">
+                    <thead class="text-center">
+                        <tr>
+                            <th>No</th>
+                            <th>Pertanyaan</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($pertanyaan as $data)
+                        <tr>
+                            <td>{{ $data->id }}</td>
+                            <td>{{ $data->pertanyaan }}</td>
+                            <td>
+                                <a href="{{ route('pertanyaan.edit', $data->id) }}" class="btn btn-outline-warning">Edit</i></a>
+                            </form>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>                            
+                </table>
+            </div>
+        </div>
     </div>
   </div>  
 

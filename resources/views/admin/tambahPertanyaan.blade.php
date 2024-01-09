@@ -72,25 +72,17 @@
       <div class="form-container">
         <div class="card mb-4">
           <div class="card-header">
-            Tambah Data Jurusan
+            Tambah Pertanyaan
           </div>
           
           <div class="card-body">
-            <form action="{{ route('jurusan.store')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('pertanyaan.store')}}" method="POST" enctype="multipart/form-data">
               @csrf
               <div class="mb-3">
-                    <label class="form-label">Nama Jurusan</label>
-                    <input type="text" class="form-control" id="nama" name="nama">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Keterangan Jurusan</label>
-                    <input type="text" class="form-control" id="keterangan" name="keterangan">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Profesi</label>
-                    <input type="text" class="form-control" id="profesi" name="profesi">
-                </div>                
-                <button class="btn btn-info">Tambah</button>
+                    <label class="form-label">Pertanyaan</label>
+                    <input type="text" class="form-control" id="pertanyaan" name="pertanyaan" >
+                </div>              
+                <button class="btn btn-info">Tambah Data</button>
             </form>
           </div>
         </div>

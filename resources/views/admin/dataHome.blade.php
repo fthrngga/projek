@@ -54,38 +54,98 @@
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                Data Jurusan
+                Data Home
             </div>
             
             <div class="card-body">
-            <form action="{{ route('jurusan.create')}}">
-                <button class="btn btn-info">Tambah Data</button>
+            <form action="{{ route('home.edit',1)}}">
+                <button class="btn btn-info">Edit Data</button>
             </form>
                 <table id="datatablesSimple">
                     <thead class="text-center">
                         <tr>
-                            <th>Nama</th>
+                            <th>Nama Bagian</th>
                             <th>Keterangan</th>
-                            <th>Profesi</th>
-                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($jurusan as $data)
                         <tr>
-                            <td>{{ $data->nama }}</td>
-                            <td>{{ $data->keterangan }}</td>
-                            <td>{{ $data->profesi }}</td>
-                            <td>
-                                <a href="{{ route('jurusan.edit', $data->id) }}" class="btn btn-outline-warning">Edit</i></a>
-                                <form action="{{ route('jurusan.destroy', $data->id) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn btn-outline-danger">Delete</button>
-                            </form>
-                            </td>
+                            <td>judul</td>
+                            <td>{{ $home->judul }}</td>
                         </tr>
-                        @endforeach
+                        <tr>
+                            <td>keterangan judul</td>
+                            <td>{{ $home->ketJudul }}</td>
+                        </tr>
+                        <tr>
+                            <td>kk</td>
+                            <td>{{ $home->ketkk }}</td>
+                        </tr>
+                        <tr>
+                            <td>jurusan 1</td>
+                            <td>{{ $home->jurusan1 }}</td>
+                        </tr>
+                        <tr>
+                            <td>keterangan jurusan 1 - 1</td>
+                            <td>{{ $home->ket1jurusan1 }}</td>
+                        </tr>
+                        <tr>
+                            <td>keterangan jurusan 1 - 2</td>
+                            <td>{{ $home->ket2jurusan1 }}</td>
+                        </tr>
+                        <tr>
+                            <td>jurusan 2</td>
+                            <td>{{ $home->jurusan2 }}</td>
+                        </tr>
+                        <tr>
+                            <td>keterangan jurusan 2 - 1</td>
+                            <td>{{ $home->ket1jurusan2 }}</td>
+                        </tr>
+                        <tr>
+                            <td>keterangan jurusan 2 - 2</td>
+                            <td>{{ $home->ket2jurusan2 }}</td>
+                        </tr>
+                        <tr>
+                            <td>profesi</td>
+                            <td>{{ $home->profesi }}</td>
+                        </tr>
+                        <tr>
+                            <td>keterangan profesi</td>
+                            <td>{{ $home->ketprofesi }}</td>
+                        </tr>
+                        <tr>
+                            <td>profesi 1</td>
+                            <td>{{ $home->profesi1 }}</td>
+                        </tr>
+                        <tr>
+                            <td>keterangan profesi 1</td>
+                            <td>{{ $home->ketprofesi1 }}</td>
+                        </tr>
+                        <tr>
+                            <td>profesi 2</td>
+                            <td>{{ $home->profesi2 }}</td>
+                        </tr>
+                        <tr>
+                            <td>keterangan profesi 2</td>
+                            <td>{{ $home->ketprofesi2 }}</td>
+                        </tr>
+                        <tr>
+                            <td>profesi 3</td>
+                            <td>{{ $home->profesi3 }}</td>
+                        </tr>
+                        <tr>
+                            <td>keterangan profesi 3</td>
+                            <td>{{ $home->ketprofesi3 }}</td>
+                        </tr>
+                        <tr>
+                            <td>profesi 4</td>
+                            <td>{{ $home->profesi4 }}</td>
+                        </tr>
+                        <tr>
+                            <td>keterangan profesi 4</td>
+                            <td>{{ $home->ketprofesi4 }}</td>
+                        </tr>
+                        
                     </tbody>                            
                 </table>
             </div>

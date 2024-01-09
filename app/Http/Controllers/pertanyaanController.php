@@ -13,7 +13,8 @@ class pertanyaanController extends Controller
      */
     public function index()
     {
-        
+        $pertanyaan = Pertanyaan::latest()->paginate(10);
+        return view('admin.dataPertanyaan', compact('pertanyaan'));
     }
 
     public function pertanyaan()
@@ -26,15 +27,19 @@ class pertanyaanController extends Controller
      */
     public function create()
     {
-        //$pertanyaan = Pertanyaan::latest()->paginate(10);
+        return view('admin.tambahPertanyaan');
     }
-
+    
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
+        $pertanyaan = Pertanyaan::create([
+            "pertanyaan" => $request->pertanyaan,
+        ]);
+
+        return redirect()->route('admin.tambahPertanyaan')->with('success', 'Data Pertanyaan berhasil ditambahkan!');
     }
 
     /**
@@ -48,17 +53,23 @@ class pertanyaanController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Pertanyaan $pertanyaan)
+    public function edit($id)
     {
-        //
+        $pertanyaan = Pertanyaan::find($id);
+        return view('admin.editPertanyaan', compact('pertanyaan'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Pertanyaan $pertanyaan)
+    public function update(Request $request, $id)
     {
-        //
+        $pertanyaan = Pertanyaan::findOrFail($id);
+        $pertanyaan->update([
+            'pertanyaan' => $request->pertanyaan,
+        ]);   
+        $pertanyaan = Pertanyaan::latest()->paginate(10);
+        return redirect()->route('pertanyaan.index')->with(['success' => 'Data Berhasil Diedit']);
     }
 
     /**

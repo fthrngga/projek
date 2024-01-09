@@ -24,14 +24,17 @@ Route::get('/', function () {
 Route::resource('home', homeController::class);
 Route::resource('jurusan', jurusanController::class);
 Route::resource('akun', akunController::class);
-
+Route::resource('pertanyaan', pertanyaanController::class);
 
 
 Route::get('/KompasKefrofesian', [homeController::class, 'index'])->name('home.index');
 
 Route::get('/pertanyaanMinat', [pertanyaanController::class, 'pertanyaan'])->name('pertanyaan.pertanyaan');
+Route::get('/DataPertanyaant', [pertanyaanController::class, 'index'])->name('pertanyaan.index');
+
 Route::get('/halamanAdmin', [homeController::class, 'viewAdmin'])->name('home.viewAdmin');
 Route::get('/halamanJurusan', [homeController::class, 'AdminJurusan'])->name('home.AdminJurusan');
+Route::get('/halamanDataHome', [homeController::class, 'viewDataHome'])->name('admin.aturHome');
 
 Route::get('/FormRegistrasi', [AkunController::class, 'viewRegis'])->name('admin.regis');
 Route::post('/registrasi', [AkunController::class, 'registrasi'])->name('regis');

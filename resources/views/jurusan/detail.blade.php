@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>KK</title>
     <link rel="icon" type="image/x-icon" href="{{ url('detail/assets/favicon.ico')}}" >
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -32,8 +32,7 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <p>{{ $jurusan->keterangan }}</p>
-                    <p>{{ $jurusan->profesi }}</p>
-                    
+                    <p>Profesi: {{ $jurusan->profesi }}</p>
                 </div>
             </div>
         </div>
